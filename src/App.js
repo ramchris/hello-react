@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+function Greeting( props) {
+  return <h3> Hello {props.firstName} {props.lastName}</h3>
+}
+
+function Greeting2( {firstName}, {lastName}) {
+  return <h3> Hello {firstName} {lastName}</h3>
+}
 
 function App() {
+  const fName = 'Ramkumar'
+  const lName = 'Krishnan'
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to react!</h1>
+      <Greeting firstName={fName} lastName={lName}/>
+      <Greeting2 firstName={fName} lastName={lName}/>
     </div>
   );
 }
